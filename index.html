@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edinburgh on Foot — July 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Spectral:wght@300;400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#161B21;        /* slate ink */
+    --panel:#1F2630;      /* raised slate */
+    --paper:#EDE9DE;      /* chalk paper */
+    --brass:#C2913B;      /* brass rail */
+    --moss:#5F7A6A;       /* leith moss */
+    --dim:#9AA3AB;        /* worn label */
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'Spectral',serif;
+    font-weight:300;
+    line-height:1.6;
+  }
+  a{color:var(--brass);text-decoration:none;border-bottom:1px solid rgba(194,145,59,.35)}
+  a:hover,a:focus{border-bottom-color:var(--brass)}
+  a:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+
+  /* ---------- header ---------- */
+  header{
+    padding:4.5rem 1.5rem 3rem;
+    max-width:820px;margin:0 auto;
+  }
+  .kicker{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--dim);
+  }
+  h1{
+    font-family:'Fraunces',serif;
+    font-weight:900;
+    font-size:clamp(2.6rem,9vw,4.6rem);
+    line-height:1.02;
+    margin:.35em 0 .3em;
+  }
+  h1 em{font-style:italic;font-weight:500;color:var(--brass)}
+  .standfirst{
+    max-width:34em;color:var(--dim);font-size:1.02rem;
+  }
+  .daynav{
+    display:flex;gap:.6rem;margin-top:2rem;flex-wrap:wrap;
+  }
+  .daynav a{
+    font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.08em;
+    border:1px solid rgba(237,233,222,.25);border-radius:2px;
+    padding:.45rem .8rem;color:var(--paper);
+  }
+  .daynav a:hover{border-color:var(--brass);color:var(--brass)}
+
+  /* ---------- day sections ---------- */
+  section.day{
+    max-width:820px;margin:0 auto;padding:0 1.5rem 4rem;
+  }
+  .dayhead{
+    display:flex;align-items:baseline;gap:1rem;
+    border-top:1px solid rgba(237,233,222,.18);
+    padding-top:2rem;margin-bottom:.4rem;flex-wrap:wrap;
+  }
+  .daynum{
+    font-family:'IBM Plex Mono',monospace;font-size:.72rem;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--brass);
+  }
+  h2{
+    font-family:'Fraunces',serif;font-weight:700;
+    font-size:clamp(1.6rem,5vw,2.3rem);line-height:1.1;
+  }
+  .daymeta{
+    font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--dim);
+    margin-bottom:1.8rem;letter-spacing:.06em;
+  }
+  .daymeta strong{color:var(--paper);font-weight:500}
+
+  /* ---------- route line ---------- */
+  .route{list-style:none;position:relative;padding-left:1.6rem}
+  .route::before{
+    content:"";position:absolute;left:.35rem;top:.6rem;bottom:.6rem;
+    width:2px;background:linear-gradient(var(--brass),var(--moss));
+    opacity:.6;
+  }
+  .stop{position:relative;padding:0 0 1.6rem 0}
+  .stop::before{
+    content:"";position:absolute;left:-1.6rem;top:.52rem;
+    width:.75rem;height:.75rem;border-radius:50%;
+    background:var(--ink);border:2px solid var(--brass);
+  }
+  .stop.headline::before{background:var(--brass)}
+  .stop .when{
+    font-family:'IBM Plex Mono',monospace;font-size:.72rem;
+    color:var(--dim);letter-spacing:.08em;display:block;
+  }
+  .stop h3{
+    font-family:'Fraunces',serif;font-weight:700;font-size:1.15rem;
+    margin:.1rem 0 .15rem;
+  }
+  .stop p{font-size:.97rem;color:#C8CCCF;max-width:38em}
+  .tag{
+    display:inline-block;font-family:'IBM Plex Mono',monospace;
+    font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--moss);border:1px solid rgba(95,122,106,.5);
+    border-radius:2px;padding:.1rem .4rem;margin-left:.4rem;vertical-align:middle;
+  }
+  .tag.booked{color:var(--brass);border-color:rgba(194,145,59,.5)}
+
+  /* ---------- footers & notes ---------- */
+  .steps{
+    font-family:'IBM Plex Mono',monospace;font-size:.75rem;
+    color:var(--ink);background:var(--brass);
+    display:inline-block;border-radius:2px;
+    padding:.35rem .7rem;letter-spacing:.1em;margin-top:.4rem;
+  }
+  .note{
+    background:var(--panel);border-left:3px solid var(--moss);
+    padding:.9rem 1.1rem;margin:1.4rem 0 0;font-size:.92rem;color:#C8CCCF;
+    border-radius:0 3px 3px 0;
+  }
+  footer{
+    max-width:820px;margin:0 auto;padding:2rem 1.5rem 4rem;
+    border-top:1px solid rgba(237,233,222,.18);
+    font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--dim);
+    letter-spacing:.06em;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="kicker">Scotland · Final Leg · 7–11 July 2026</p>
+  <h1>Edinburgh<br><em>on foot</em></h1>
+  <p class="standfirst">Three walking days out of a flat in Leith. Bookshops, one arthouse screen, queer pubs not clubs, and a 25,000-step floor. Tourist things done early, local things done properly.</p>
+  <nav class="daynav" aria-label="Days">
+    <a href="#tue">Tue 07 · Leith → New Town</a>
+    <a href="#wed">Wed 08 · Old Town + Cameo</a>
+    <a href="#thu">Thu 09 · Summit → Sea</a>
+  </nav>
+</header>
+
+<section class="day" id="tue">
+  <div class="dayhead">
+    <span class="daynum">Day 01 — Tue 07 Jul</span>
+    <h2>Arrival loop: New Town, Stockbridge, the Walk home</h2>
+  </div>
+  <p class="daymeta">In from Dundee, early. Bag → Waverley left luggage (nr. platform 2) — or ask Lucy about an early drop. <strong>Target: 25k+</strong></p>
+  <ul class="route">
+    <li class="stop"><span class="when">morning</span><h3>Waverley → New Town</h3><p>Stash the bag, coffee, then north down the Georgian grid via Dundas Street's galleries.</p></li>
+    <li class="stop"><span class="when">late morning</span><h3>Stockbridge <span class="tag">books</span></h3><p>Golden Hare Books, then the famously good charity shops.</p></li>
+    <li class="stop"><span class="when">midday</span><h3>Dean Village via Water of Leith</h3><p>Fifteen minutes upstream on the river path. Go before the tour groups thicken.</p></li>
+    <li class="stop"><span class="when">afternoon</span><h3>Royal Botanic Garden</h3><p>Free. A slow hour. Best skyline view of the castle from the lawns.</p></li>
+    <li class="stop"><span class="when">late afternoon</span><h3>Broughton Street — Pink Triangle <span class="tag">queer</span></h3><p>First pint at The Street or Planet. Bars, not clubs. Funnels naturally back toward Waverley.</p></li>
+    <li class="stop"><span class="when">~5pm</span><h3>Collect bag → Leith Walk</h3><p>25 minutes downhill to the flat. McNaughtan's Bookshop is directly on the route — Scotland's oldest antiquarian dealer, basically the local.</p></li>
+    <li class="stop headline"><span class="when">evening</span><h3>The Shore, Leith</h3><p>Pints at Roseleaf or the King's Wark. If energy holds: counter seat at Eleanore (book).</p></li>
+  </ul>
+  <span class="steps">STEP FLOOR · 25,000</span>
+</section>
+
+<section class="day" id="wed">
+  <div class="dayhead">
+    <span class="daynum">Day 02 — Wed 08 Jul</span>
+    <h2>Old Town early, books at West Port, film at the Cameo</h2>
+  </div>
+  <p class="daymeta">Tourist hours beaten by starting at the top of the Walk. <strong>Target: 25k+</strong></p>
+  <ul class="route">
+    <li class="stop"><span class="when">before 9</span><h3>Calton Hill</h3><p>Twenty-five minutes from the flat, twenty up. The best view in the city, before the crowds.</p></li>
+    <li class="stop"><span class="when">morning</span><h3>Royal Mile → Victoria Street → Grassmarket</h3><p>The honest tourist sweep, done early enough to enjoy it.</p></li>
+    <li class="stop"><span class="when">midday</span><h3>West Port bookshops <span class="tag">books</span></h3><p>Armchair Books — chaotic, towering, correct — then Edinburgh Books next door.</p></li>
+    <li class="stop"><span class="when">rain option</span><h3>National Museum of Scotland</h3><p>Free, vast, five minutes from the Grassmarket.</p></li>
+    <li class="stop"><span class="when">~6:30pm</span><h3>Dinner in Tollcross</h3><p>Ting Thai Caravan (counter Thai) or Kim's Mini Meals (tiny Korean, cult, cash).</p></li>
+    <li class="stop headline"><span class="when">8:15pm</span><h3>The Cameo — <em>The Furious</em> <span class="tag booked">to book</span></h3><p>1914 auditorium, proper bar for the pre-film pint. Book at picturehouses.com. Fallback: Filmhouse programme on Lothian Road, 10 min away.</p></li>
+    <li class="stop"><span class="when">night</span><h3>Walk home via Broughton</h3><p>Optional Pink Triangle nightcap; otherwise a bus down the Walk is honourable.</p></li>
+  </ul>
+  <span class="steps">STEP FLOOR · 25,000</span>
+</section>
+
+<section class="day" id="thu">
+  <div class="dayhead">
+    <span class="daynum">Day 03 — Thu 09 Jul</span>
+    <h2>Arthur's Seat to the sea, and a Leith finale</h2>
+  </div>
+  <p class="daymeta">The trip's summit day. Gentle line up and down — left side gets a vote. <strong>Target: 30k</strong></p>
+  <ul class="route">
+    <li class="stop headline"><span class="when">morning</span><h3>Arthur's Seat via Dunsapie Loch</h3><p>The gradual route both directions; skip the Gutted Haddie scramble. Short summit push, whole city and firth below.</p></li>
+    <li class="stop"><span class="when">midday</span><h3>Duddingston — Sheep Heid Inn</h3><p>Descend to the village. Arguably Scotland's oldest pub; a half at minimum is compulsory.</p></li>
+    <li class="stop"><span class="when">afternoon</span><h3>Portobello</h3><p>Walk east to the beach suburb. Promenade, coffee, sea air.</p></li>
+    <li class="stop"><span class="when">late afternoon</span><h3>The Regent, Abbeyhill <span class="tag">queer</span></h3><p>The queer pub done right — cask ale, dogs, zero club energy.</p></li>
+    <li class="stop"><span class="when">evening</span><h3>Last supper in Leith</h3><p>Eleanore (counter, natural wine, small plates) or The Walnut. Both tiny — book ahead.</p></li>
+  </ul>
+  <span class="steps">STEP FLOOR · 30,000</span>
+  <div class="note">Fri 10 Jul — loose end day, pack, resupply. Sat 11 Jul — fly home from EDI.</div>
+</section>
+
+<footer>
+  BASE: FLAT IN LEITH, OFF THE WALK · IN: TUE 07 JUL (DUNDEE) · OUT: SAT 11 JUL (EDI) · WX TUE: 64°F / 20% RAIN
+</footer>
+
+</body>
+</html>
