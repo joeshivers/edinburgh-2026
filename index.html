@@ -26,10 +26,7 @@
   a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--faint)}
   a:hover{text-decoration-color:var(--ink)}
   a:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
-  h1{
-    font-size:14px;font-weight:700;
-    text-transform:lowercase;letter-spacing:.02em;
-  }
+  h1{font-size:14px;font-weight:700;letter-spacing:.02em}
   .sub{color:var(--mid);margin-bottom:3.5rem}
   h2{
     font-size:14px;font-weight:700;
@@ -37,22 +34,18 @@
     padding-top:1.25rem;
     border-top:1px solid var(--line);
   }
-  .meta{color:var(--faint);margin-bottom:1.25rem}
-  dl{display:grid;grid-template-columns:11ch 1fr;row-gap:.9rem;column-gap:1.5ch}
-  dt{color:var(--faint)}
-  dd{margin:0}
-  dd .what{font-weight:700}
-  dd .tag{color:var(--faint);font-weight:400}
-  dd .how{color:var(--mid);display:block}
+  .meta{color:var(--faint);margin-bottom:1.5rem}
+  .place{margin-bottom:1.6rem}
+  .place .name{font-weight:700}
+  .place .tag{color:var(--faint);font-weight:400}
+  .place .desc{color:var(--mid)}
+  .place .alt{color:var(--faint)}
+  .place .alt b{color:var(--mid);font-weight:400}
   .note{color:var(--mid);margin-top:1.5rem}
   footer{
     margin-top:4rem;padding-top:1.25rem;
     border-top:1px solid var(--line);
     color:var(--faint);
-  }
-  @media (max-width:480px){
-    dl{grid-template-columns:1fr}
-    dt{margin-bottom:-.7rem}
   }
 </style>
 </head>
@@ -62,41 +55,105 @@
 <p class="sub">tue 07 — thu 09 july 2026. base: a flat in leith, off the walk.<br>
 bookshops, one arthouse screen, queer pubs not clubs.</p>
 
-<h2>tue 07 — arrival loop: new town, stockbridge, the walk home</h2>
-<p class="meta">in from dundee, early. bag → waverley left luggage (nr. platform 2), or ask lucy about an early drop.</p>
-<dl>
-  <dt>morning</dt><dd><span class="what">waverley → new town</span><span class="how">stash the bag, coffee, then down the georgian grid. dundas street galleries open 10am.</span></dd>
-  <dt>late morning</dt><dd><span class="what">stockbridge</span> <span class="tag">[books]</span><span class="how">golden hare books, then the charity shops.</span></dd>
-  <dt>midday</dt><dd><span class="what">dean village via water of leith</span><span class="how">fifteen minutes upstream on the river path, before the tour groups.</span></dd>
-  <dt>afternoon</dt><dd><span class="what">royal botanic garden</span><span class="how">free. a slow hour.</span></dd>
-  <dt>mid afternoon</dt><dd><span class="what">scottish national portrait gallery</span> <span class="tag">[museum]</span><span class="how">queen street. scotland told through faces. free, on the line back toward broughton.</span></dd>
-  <dt>late afternoon</dt><dd><span class="what">broughton street — pink triangle</span> <span class="tag">[queer]</span><span class="how">first pint at the street or planet. bars, not clubs.</span></dd>
-  <dt>~5pm</dt><dd><span class="what">collect bag → leith walk</span><span class="how">25 min downhill to the flat. mcnaughtan's bookshop is on the route.</span></dd>
-  <dt>evening</dt><dd><span class="what">the shore, leith</span><span class="how">pints at roseleaf or the king's wark. if energy holds: counter seat at eleanore (book).</span></dd>
-</dl>
+<h2>tue 07 — arrival day: new town, stockbridge, the walk home</h2>
+<p class="meta">in from dundee, early. bag → waverley left luggage (nr. platform 2), or ask lucy about an early drop. order below is the walking order.</p>
+
+<div class="place">
+  <div class="name">dundas street galleries</div>
+  <div class="desc">the scottish gallery and open eye, anchors of the new town art strip. both open 10am — coffee first.</div>
+</div>
+<div class="place">
+  <div class="name">golden hare books <span class="tag">[books]</span></div>
+  <div class="desc">stockbridge's small, perfectly-curated indie. the neighbourhood's charity shops are famously good too.</div>
+</div>
+<div class="place">
+  <div class="name">dean village</div>
+  <div class="desc">fifteen minutes upstream on the water of leith path. absurdly picturesque old milling village — go before the tour groups.</div>
+</div>
+<div class="place">
+  <div class="name">royal botanic garden</div>
+  <div class="desc">free. a slow hour, best castle skyline from the lawns.</div>
+</div>
+<div class="place">
+  <div class="name">scottish national portrait gallery <span class="tag">[museum]</span></div>
+  <div class="desc">neo-gothic red sandstone hall on queen street. scotland told through faces. free, on the line back toward broughton.</div>
+</div>
+<div class="place">
+  <div class="name">the street <span class="tag">[queer]</span></div>
+  <div class="desc">first pint in the pink triangle, broughton street's historic gay quarter. bar, not club.</div>
+  <div class="alt">alt: <b>planet</b> — a block away, same energy.</div>
+</div>
+<div class="place">
+  <div class="name">mcnaughtan's bookshop <span class="tag">[books]</span></div>
+  <div class="desc">scotland's oldest antiquarian dealer, directly on the walk down to the flat. basically the local.</div>
+</div>
+<div class="place">
+  <div class="name">roseleaf</div>
+  <div class="desc">pints on the shore — cosy, teapot cocktails, zero pretension.</div>
+  <div class="alt">alt: <b>the king's wark</b> — 500-year-old stone pub on the water.</div>
+  <div class="alt">alt: <b>eleanore</b> — counter seat, natural wine, small plates. book if energy holds.</div>
+</div>
 
 <h2>wed 08 — old town early, books at west port, film at the cameo</h2>
 <p class="meta">tourist hours beaten by starting at the top of the walk.</p>
-<dl>
-  <dt>before 9</dt><dd><span class="what">calton hill</span><span class="how">25 min from the flat, 20 up. the best view in the city, before the crowds.</span></dd>
-  <dt>morning</dt><dd><span class="what">royal mile → victoria street → grassmarket</span><span class="how">the honest tourist sweep, done early enough to enjoy it.</span></dd>
-  <dt>midday</dt><dd><span class="what">west port bookshops</span> <span class="tag">[books]</span><span class="how">armchair books — chaotic, towering, correct — then edinburgh books next door.</span></dd>
-  <dt>early aft.</dt><dd><span class="what">surgeons' hall museums</span> <span class="tag">[museum]</span><span class="how">pathology specimens, the burke &amp; hare death mask. ~£10, closes 5pm, nicolson st.</span></dd>
-  <dt>rain option</dt><dd><span class="what">national museum of scotland</span><span class="how">free, vast, five minutes from the grassmarket.</span></dd>
-  <dt>~6:30pm</dt><dd><span class="what">dinner in tollcross</span><span class="how">ting thai caravan (counter thai) or kim's mini meals (tiny korean, cult, cash).</span></dd>
-  <dt>8:15pm</dt><dd><span class="what">the cameo — the furious</span> <span class="tag">[to book]</span><span class="how">1914 auditorium, proper bar for the pre-film pint. picturehouses.com. fallback: filmhouse, lothian rd.</span></dd>
-  <dt>night</dt><dd><span class="what">walk home via broughton</span><span class="how">optional pink triangle nightcap; otherwise a bus down the walk is honourable.</span></dd>
-</dl>
+
+<div class="place">
+  <div class="name">calton hill</div>
+  <div class="desc">25 min from the flat, 20 up. the best view in the city — go before 9, before the crowds.</div>
+</div>
+<div class="place">
+  <div class="name">royal mile → victoria street → grassmarket</div>
+  <div class="desc">the honest tourist sweep, done early enough to enjoy it.</div>
+</div>
+<div class="place">
+  <div class="name">armchair books <span class="tag">[books]</span></div>
+  <div class="desc">west port. chaotic, towering, correct.</div>
+  <div class="alt">alt: <b>edinburgh books</b> — next door, tidier, equally deep.</div>
+</div>
+<div class="place">
+  <div class="name">surgeons' hall museums <span class="tag">[museum]</span></div>
+  <div class="desc">pathology specimens, the burke &amp; hare death mask, real medical-history weirdness. ~£10, closes 5pm, nicolson st.</div>
+  <div class="alt">alt (rain): <b>national museum of scotland</b> — free, vast, five minutes from the grassmarket.</div>
+</div>
+<div class="place">
+  <div class="name">ting thai caravan</div>
+  <div class="desc">counter-style thai in tollcross, fast and loud in the good way. pre-film dinner.</div>
+  <div class="alt">alt: <b>kim's mini meals</b> — tiny korean, cult following, cash.</div>
+</div>
+<div class="place">
+  <div class="name">the cameo — the furious, 8:15pm <span class="tag">[to book]</span></div>
+  <div class="desc">1914 auditorium, proper bar for the pre-film pint. picturehouses.com.</div>
+  <div class="alt">alt: <b>filmhouse</b> — lothian rd, 10 min away, full programme at filmhouse.org.uk.</div>
+</div>
+<div class="place">
+  <div class="name">walk home via broughton</div>
+  <div class="desc">optional pink triangle nightcap; otherwise a bus down the walk is honourable.</div>
+</div>
 
 <h2>thu 09 — arthur's seat to the sea, and a leith finale</h2>
 <p class="meta">the trip's summit day. gentle line up and down — left side gets a vote.</p>
-<dl>
-  <dt>morning</dt><dd><span class="what">arthur's seat via dunsapie loch</span><span class="how">the gradual route both directions; skip the gutted haddie scramble.</span></dd>
-  <dt>midday</dt><dd><span class="what">duddingston — sheep heid inn</span><span class="how">arguably scotland's oldest pub; a half at minimum is compulsory.</span></dd>
-  <dt>afternoon</dt><dd><span class="what">portobello</span><span class="how">walk east to the beach suburb. promenade, coffee, sea air.</span></dd>
-  <dt>late aft.</dt><dd><span class="what">the regent, abbeyhill</span> <span class="tag">[queer]</span><span class="how">the queer pub done right — cask ale, dogs, zero club energy.</span></dd>
-  <dt>evening</dt><dd><span class="what">last supper in leith</span><span class="how">eleanore (counter, natural wine, small plates) or the walnut. both tiny — book.</span></dd>
-</dl>
+
+<div class="place">
+  <div class="name">arthur's seat via dunsapie loch</div>
+  <div class="desc">the gradual route both directions; skip the gutted haddie scramble. short summit push, whole city and firth below.</div>
+</div>
+<div class="place">
+  <div class="name">sheep heid inn, duddingston</div>
+  <div class="desc">arguably scotland's oldest pub, at the bottom of the descent. a half at minimum is compulsory.</div>
+</div>
+<div class="place">
+  <div class="name">portobello</div>
+  <div class="desc">walk east to the beach suburb. promenade, coffee, sea air.</div>
+</div>
+<div class="place">
+  <div class="name">the regent, abbeyhill <span class="tag">[queer]</span></div>
+  <div class="desc">the queer pub done right — cask ale, dogs, zero club energy. on the walk back.</div>
+</div>
+<div class="place">
+  <div class="name">eleanore</div>
+  <div class="desc">last supper in leith — counter seating, natural wine, inventive small plates. tiny, book ahead.</div>
+  <div class="alt">alt: <b>the walnut</b> — neighbourhood bistro on the walk, also tiny, also book.</div>
+</div>
 <p class="note">fri 10 — loose end day, pack, resupply. sat 11 — fly home from edi.</p>
 
 <footer>in: tue 07 jul (dundee) · out: sat 11 jul (edi)</footer>
